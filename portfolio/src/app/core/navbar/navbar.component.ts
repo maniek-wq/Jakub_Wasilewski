@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -10,12 +10,13 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class NavbarComponent {
   @Input() currentSection: string | null = null;
+  @Input() isHidden = false;
   @Output() sectionChange = new EventEmitter<string>();
 
   isMenuOpen = false;
   currentLang = 'pl';
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private host: ElementRef<HTMLElement>) {
     this.currentLang = (localStorage.getItem('lang') as 'pl' | 'en' | null) ?? 'pl';
   }
 
@@ -32,6 +33,15 @@ export class NavbarComponent {
     this.currentLang = lang;
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (!this.isMenuOpen) return;
+    const target = event.target as Node | null;
+    if (target && !this.host.nativeElement.contains(target)) {
+      this.isMenuOpen = false;
+    }
   }
 }
 

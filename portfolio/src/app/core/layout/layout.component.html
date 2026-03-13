@@ -1,6 +1,8 @@
 <div class="flex min-h-screen flex-col bg-slate-950 text-slate-100">
+  <app-loading-overlay></app-loading-overlay>
   <app-navbar
     [currentSection]="currentSection"
+    [isHidden]="isNavbarHidden"
     (sectionChange)="onSectionChange($event)"
   ></app-navbar>
 

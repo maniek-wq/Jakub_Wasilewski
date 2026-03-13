@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import type { Project } from '../../features/projects/project.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project-card',
@@ -10,5 +11,19 @@ import type { Project } from '../../features/projects/project.model';
 })
 export class ProjectCardComponent {
   @Input({ required: true }) project!: Project;
+
+  constructor(private translate: TranslateService) {}
+
+  get displayTitle(): string {
+    const lang = this.translate.currentLang || this.translate.getDefaultLang();
+    return lang === 'en' && this.project.titleEn ? this.project.titleEn : this.project.title;
+  }
+
+  get displayShortDescription(): string {
+    const lang = this.translate.currentLang || this.translate.getDefaultLang();
+    return lang === 'en' && this.project.shortDescriptionEn
+      ? this.project.shortDescriptionEn
+      : this.project.shortDescription;
+  }
 }
 

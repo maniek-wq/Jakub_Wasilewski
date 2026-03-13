@@ -1,0 +1,42 @@
+<ng-container *ngIf="state$ | async as state">
+  <div
+    class="pointer-events-none fixed inset-0 z-40 flex items-start justify-center bg-slate-950/80 backdrop-blur-xl transition-opacity duration-300"
+    [class.opacity-0]="!state.visible"
+    [class.opacity-100]="state.visible"
+  >
+    <div
+      class="mt-24 w-full max-w-3xl px-6"
+      [class.translate-y-4]="!state.visible"
+      [class.translate-y-0]="state.visible"
+      [class.opacity-0]="!state.visible"
+      [class.opacity-100]="state.visible"
+    >
+      <div class="overflow-hidden rounded-2xl border border-emerald-500/40 bg-slate-900/80 shadow-lg shadow-emerald-500/30">
+        <div class="h-1.5 w-full bg-slate-900/90">
+          <div
+            class="h-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400 transition-[width] duration-200 ease-out"
+            [style.width.%]="state.progress"
+          ></div>
+        </div>
+        <div class="flex items-center justify-between px-4 py-3 text-xs text-slate-300">
+          <div class="flex items-center gap-2 font-mono">
+            <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(74,222,128,0.8)]"></span>
+            <span class="uppercase tracking-[0.24em] text-emerald-300/80">Boot sequence</span>
+          </div>
+          <span class="text-[10px] text-slate-500">
+            ~{{ (state.duration / 1000) | number : '1.1-1' }}s
+          </span>
+        </div>
+        <div class="border-t border-slate-800/80 bg-slate-950/90 px-4 py-3 font-mono text-[11px] text-slate-300">
+          <ng-container [ngSwitch]="state.phase">
+            <span *ngSwitchCase="'short'">Initializing modules, wiring dependencies...</span>
+            <span *ngSwitchCase="'medium'">Fetching portfolio sections over the network...</span>
+            <span *ngSwitchCase="'long'">Optimizing bundle and assets for your connection...</span>
+            <span *ngSwitchDefault>Preparing interface...</span>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+

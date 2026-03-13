@@ -8,11 +8,13 @@ import {
 } from '@ngx-translate/http-loader';
 
 import { routes } from './app.routes';
+import { provideRouterLoading } from './core/loading/router-loading.provider';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
+    provideRouterLoading(),
     provideHttpClient(),
     {
       provide: TRANSLATE_HTTP_LOADER_CONFIG,

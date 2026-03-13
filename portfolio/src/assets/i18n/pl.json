@@ -1,6 +1,7 @@
 {
   "nav": {
     "about": "O mnie",
+    "collab": "Współpraca",
     "projects": "Projekty",
     "contact": "Kontakt"
   },
@@ -12,6 +13,58 @@
     "primaryCta": "Zobacz projekty",
     "secondaryCta": "Skontaktuj się",
     "availability": "Dostępny na nowe projekty"
+  },
+  "about": {
+    "badge": "O mnie",
+    "title": "Inżynier oprogramowania z mindsetem productowym",
+    "body": "Projektuję i rozwijam systemy webowe end‑to‑end: od architektury backendu, przez API i integracje, po dopracowany front‑end. Stawiam na czytelny kod, automatyzację i UX, który wspiera realne procesy biznesowe.",
+    "stackTitle": "Stack technologiczny",
+    "experienceTitle": "Doświadczenie",
+    "exp1Title": "Systemy biznesowe / aplikacje webowe",
+    "exp1Body": "Projektowanie architektury, integracje z zewnętrznymi usługami, dbanie o wydajność i bezpieczeństwo.",
+    "exp2Title": "Współpraca z biznesem",
+    "exp2Body": "Tłumaczenie wymagań na konkretne rozwiązania techniczne i iteracyjne dowożenie wartości."
+  },
+  "projectsSection": {
+    "badge": "Projekty",
+    "title": "Wybrane systemy i aplikacje",
+    "body": "Poniżej pojawią się projekty z realnymi repozytoriami i podglądami systemów — w tym momencie sekcja działa jako nowoczesny placeholder pod Twoje case studies."
+  },
+  "contact": {
+    "badge": "Kontakt",
+    "title": "Porozmawiajmy o współpracy",
+    "body": "W kolejnych krokach ta sekcja zostanie uzupełniona o w pełni funkcjonalny formularz kontaktowy z walidacją i integracją e‑mail/API. Na ten moment możesz dopasować teksty do swojego profilu.",
+    "nameLabel": "Imię",
+    "namePlaceholder": "Twoje imię",
+    "nameError": "Podaj co najmniej 2 znaki.",
+    "emailLabel": "E‑mail",
+    "emailPlaceholder": "you@example.com",
+    "emailError": "Podaj poprawny adres e‑mail.",
+    "messageLabel": "Wiadomość",
+    "messagePlaceholder": "Opisz krótko projekt lub temat współpracy.",
+    "messageError": "Napisz kilka zdań, aby łatwiej zrozumieć kontekst.",
+    "submit": "Wyślij wiadomość",
+    "success": "Wiadomość została wysłana lokalnie — po podpięciu backendu trafi na Twoją skrzynkę."
+  },
+  "contactDetails": {
+    "title": "Preferowane formy kontaktu",
+    "phoneLabel": "Telefon",
+    "emailLabel": "E‑mail",
+    "instagramLabel": "Instagram",
+    "emailJsNote": "Formularz powyżej w kolejnym kroku podepniemy pod wysyłkę przez EmailJS, tak aby wiadomości trafiały bezpośrednio na Twoją skrzynkę."
+  },
+  "collab": {
+    "badge": "Jak wygląda współpraca",
+    "title": "Proces współpracy krok po kroku",
+    "description": "Chcę, żeby od samego początku było jasne, jak wygląda współpraca ze mną – od pierwszej rozmowy, przez development, aż po utrzymanie i dalszy rozwój projektu.",
+    "step1Title": "Krok 1: Krótka rozmowa i doprecyzowanie potrzeb",
+    "step1Body": "Zaczynamy od 20–30 minutowej rozmowy online. Omawiamy kontekst biznesowy, cele, grupę docelową oraz obecne rozwiązania. Na tym etapie wspólnie sprawdzamy, czy ma sens iść dalej oraz w jakiej formule.",
+    "step2Title": "Krok 2: Zakres, estymacja i propozycja",
+    "step2Body": "Na podstawie rozmowy przygotowuję propozycję zakresu – główne moduły, kluczowe funkcje MVP, integracje i wstępny harmonogram. Dostajesz widełki kosztowe oraz rekomendację, od czego najlepiej zacząć.",
+    "step3Title": "Krok 3: Realizacja iteracyjna z regularnym feedbackiem",
+    "step3Body": "Pracuję w krótkich iteracjach (najczęściej tygodnie). Po każdym etapie pokazuję działającą wersję, zbieram feedback i wspólnie ustalamy priorytety na kolejną iterację. Dzięki temu zamiast „wielkiego finału” masz ciągły podgląd postępów.",
+    "step4Title": "Krok 4: Wdrożenie, przekazanie i dalsze wsparcie",
+    "step4Body": "Pomagam doprowadzić projekt do produkcji – konfiguracja środowisk, deployment, monitoring. Po wdrożeniu przekazuję repozytorium, dostęp do narzędzi i krótką dokumentację. W razie potrzeby umawiamy się na stałe wsparcie lub dalszy rozwój."
   }
 }
 
