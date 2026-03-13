@@ -10,5 +10,9 @@ export interface Project {
   githubUrl?: string;
   liveDemoUrl?: string;
   thumbnail?: string;
+  /** Ścieżka do wideo podglądu – widok desktopowy */
+  previewVideoDesktop?: string;
+  /** Ścieżka do wideo podglądu – widok mobilny */
+  previewVideoMobile?: string;
 }
 

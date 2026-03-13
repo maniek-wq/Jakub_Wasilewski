@@ -32,7 +32,10 @@
     "body": "Poniżej pojawią się projekty z realnymi repozytoriami i podglądami systemów — w tym momencie sekcja działa jako nowoczesny placeholder pod Twoje case studies."
   },
   "projects": {
-    "privateApp": "Prywatna aplikacja wewnętrzna klienta"
+    "privateApp": "Prywatna aplikacja wewnętrzna klienta",
+    "previewLabel": "Podgląd",
+    "previewDesktop": "Desktop",
+    "previewMobile": "Mobile"
   },
   "contact": {
     "badge": "Kontakt",

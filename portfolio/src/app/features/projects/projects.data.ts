@@ -96,6 +96,8 @@ export const PROJECTS: Project[] = [
     techStack: ['Angular', 'Tailwind CSS', 'Responsive Design', 'SEO'],
     githubUrl: '',
     liveDemoUrl: 'https://be-harmony.vercel.app',
+    previewVideoDesktop: 'assets/videos/be-harmony/Beh_2_Des.mp4',
+    previewVideoMobile: 'assets/videos/be-harmony/Beh_Mob.mp4',
   },
   {
     id: 'wnetrze-kwadratu',

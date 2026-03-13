@@ -32,7 +32,10 @@
     "body": "Below you will find projects with real repositories and live demos — for now this section works as a modern placeholder for your case studies."
   },
   "projects": {
-    "privateApp": "Private internal application for the client"
+    "privateApp": "Private internal application for the client",
+    "previewLabel": "Preview",
+    "previewDesktop": "Desktop",
+    "previewMobile": "Mobile"
   },
   "contact": {
     "badge": "Contact",

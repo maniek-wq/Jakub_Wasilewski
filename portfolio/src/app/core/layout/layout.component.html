@@ -12,5 +12,141 @@
   </main>
 
   <app-footer></app-footer>
+
+  <!-- Modal projektu w layout (fixed względem viewport, bez wpływu scroll/transform z main) -->
+  <ng-container *ngIf="modal.selectedProject() as active">
+    <div
+      class="modal-container"
+      [class.modal-open]="modal.modalShouldAnimate() && !modal.isProjectClosing()"
+      [class.out]="modal.isProjectClosing()"
+      (click)="modal.close()"
+    >
+      <div class="modal-background">
+        <div
+          class="modal relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl border border-emerald-500/30 bg-slate-950 p-5 shadow-[0_24px_80px_rgba(16,185,129,0.45)] sm:max-w-lg md:max-w-3xl md:p-6"
+          (click)="$event.stopPropagation()"
+        >
+          <button
+            type="button"
+            class="absolute right-4 top-4 rounded-full border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-300 transition hover:border-emerald-500 hover:text-emerald-300"
+            (click)="modal.close()"
+          >
+            Close
+          </button>
+
+          <h3
+            class="mb-2 font-display text-xl font-semibold text-slate-50"
+            [appTypewriter]="active.title"
+            [appTypewriterDelay]="900"
+            [appTypewriterSpeed]="40"
+            [appTypewriterCursor]="false"
+          ></h3>
+          <p
+            class="mb-4 text-sm text-slate-300"
+            [appTypewriter]="getProjectDescription(active)"
+            [appTypewriterDelay]="1400"
+            [appTypewriterSpeed]="35"
+          ></p>
+
+          <ng-container *ngIf="active.previewVideoDesktop || active.previewVideoMobile">
+            <div class="mb-4">
+              <h4 class="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-400/80">
+                {{ 'projects.previewLabel' | translate }}
+              </h4>
+              <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div
+                  *ngIf="active.previewVideoDesktop"
+                  class="flex flex-col rounded-xl border border-slate-700/80 bg-slate-900/60 overflow-hidden"
+                >
+                  <div class="flex shrink-0 items-center justify-center gap-1.5 border-b border-slate-700/60 bg-slate-800/50 px-2 py-1.5 text-[11px] text-slate-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v-1.007a3 3 0 00-.879-2.122L7.5 12m0-2.5v2.5m0-2.5l2.121-2.121a3 3 0 00.879-2.122V8.25m0 15.75h12a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0021 4.5h-12a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 009 20.25z" />
+                    </svg>
+                    {{ 'projects.previewDesktop' | translate }}
+                  </div>
+                  <div class="relative h-[200px] w-full shrink-0 bg-slate-950 flex items-center justify-center">
+                    <video
+                      class="h-full w-full object-contain"
+                      controls
+                      loop
+                      muted
+                      playsinline
+                      preload="metadata"
+                    >
+                      <source [src]="getVideoSrc(active.previewVideoDesktop)" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+                <div
+                  *ngIf="active.previewVideoMobile"
+                  class="flex flex-col rounded-xl border border-slate-700/80 bg-slate-900/60 overflow-hidden"
+                >
+                  <div class="flex shrink-0 items-center justify-center gap-1.5 border-b border-slate-700/60 bg-slate-800/50 px-2 py-1.5 text-[11px] text-slate-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5h3m-6.75 2.25h10.5a2.25 2.25 0 002.25-2.25v-15a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 4.5v15a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
+                    {{ 'projects.previewMobile' | translate }}
+                  </div>
+                  <div class="relative h-[200px] w-full shrink-0 bg-slate-950 flex items-center justify-center">
+                    <video
+                      class="h-full max-w-[140px] w-auto object-contain"
+                      controls
+                      loop
+                      muted
+                      playsinline
+                      preload="metadata"
+                    >
+                      <source [src]="getVideoSrc(active.previewVideoMobile)" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <div class="mb-4">
+            <h4 class="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-400/80">
+              Tech stack
+            </h4>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span
+                *ngFor="let tech of active.techStack"
+                class="rounded-full bg-slate-900/80 px-3 py-1 text-slate-100"
+              >
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <a
+              *ngIf="active.liveDemoUrl"
+              [href]="active.liveDemoUrl"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-1.5 text-emerald-300 transition hover:bg-emerald-500/20 hover:text-emerald-100"
+            >
+              <span>Live demo</span>
+            </a>
+            <a
+              *ngIf="active.githubUrl"
+              [href]="active.githubUrl"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-700 px-4 py-1.5 text-slate-200 transition hover:border-emerald-500 hover:text-emerald-300"
+            >
+              <span>GitHub</span>
+            </a>
+            <span
+              *ngIf="!active.githubUrl && !active.liveDemoUrl"
+              class="text-slate-400"
+            >
+              {{ 'projects.privateApp' | translate }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 </div>
 
