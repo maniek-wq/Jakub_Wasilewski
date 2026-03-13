@@ -26,6 +26,13 @@ export class HomeComponent {
 
   constructor(private fb: FormBuilder) {}
 
+  scrollTo(sectionId: 'projects' | 'contact'): void {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   onSubmit() {
     this.submitted = true;
     if (this.contactForm.invalid) {

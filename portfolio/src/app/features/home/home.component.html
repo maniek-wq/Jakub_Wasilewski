@@ -23,6 +23,7 @@
       <div class="flex flex-wrap gap-3">
         <button
           class="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-medium text-slate-950 shadow-[0_0_25px_rgba(16,185,129,0.6)] transition hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+          (click)="scrollTo('projects')"
         >
           {{ 'hero.primaryCta' | translate }}
           <svg
@@ -38,6 +39,7 @@
         </button>
         <button
           class="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/70 px-5 py-2.5 text-sm font-medium text-slate-100 shadow-sm shadow-slate-950/60 transition hover:border-emerald-500/70 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+          (click)="scrollTo('contact')"
         >
           {{ 'hero.secondaryCta' | translate }}
         </button>

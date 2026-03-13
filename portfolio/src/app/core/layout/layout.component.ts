@@ -4,11 +4,19 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
 import { LoadingOverlayComponent } from '../loading/loading-overlay.component';
+import { MatrixBackgroundComponent } from '../matrix/matrix-background.component';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, LoadingOverlayComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    NavbarComponent,
+    FooterComponent,
+    LoadingOverlayComponent,
+    MatrixBackgroundComponent,
+  ],
   templateUrl: './layout.component.html',
 })
 export class LayoutComponent {
