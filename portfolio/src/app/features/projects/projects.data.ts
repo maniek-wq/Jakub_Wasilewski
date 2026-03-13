@@ -11,6 +11,8 @@ export const PROJECTS: Project[] = [
       'A comprehensive e‑learning platform for managing training processes, bookings and communication with trainees.',
     longDescription:
       'System łączy panel administracyjny, panel trenera i widok kursanta. Umożliwia zarządzanie ofertą szkoleń, harmonogramami, listami uczestników, płatnościami oraz automatyczną komunikacją e‑mail i powiadomieniami web‑push. Frontend działa jako PWA w Angularze, backend w Node.js komunikuje się z bazą MongoDB i zewnętrznymi usługami (np. wysyłka e‑mail, analityka).',
+    longDescriptionEn:
+      'The system combines an admin panel, trainer panel and trainee view. It enables managing the training catalogue, schedules, attendee lists, payments and automated e‑mail and web‑push communication. The frontend runs as an Angular PWA, while the Node.js backend communicates with MongoDB and external services (e.g. e‑mail delivery, analytics).',
     techStack: [
       'Angular',
       'Node.js',
@@ -36,6 +38,8 @@ export const PROJECTS: Project[] = [
       'A specialised internal web system for planning driver and vehicle schedules for a transport company (private, not publicly accessible).',
     longDescription:
       'Aplikacja zaprojektowana dla firmy transportowej do codziennego zarządzania dostępnością kierowców i pojazdów. Obejmuje wielowymiarowy grafik, moduły do zarządzania zmianami, powiadomienia web‑push, komunikację w grupach oraz panel administracyjny z uprawnieniami. Backend w Node.js/Express wykorzystuje MongoDB, Socket.io i Web Push, a frontend w Angularze działa jako PWA hostowana w środowisku kontenerowym (Docker, Render/Vercel).',
+    longDescriptionEn:
+      'An application built for a transport company to manage daily availability of drivers and vehicles. It includes a multi‑dimensional schedule, shift management modules, web‑push notifications, group communication and an admin panel with permissions. The Node.js/Express backend uses MongoDB, Socket.io and Web Push, while the Angular frontend runs as a PWA hosted in a containerised environment (Docker, Render/Vercel).',
     techStack: [
       'Angular',
       'Node.js',
@@ -61,6 +65,8 @@ export const PROJECTS: Project[] = [
       'An application for handling table reservations in a restaurant with two locations, with customer and admin panels.',
     longDescription:
       'System umożliwia klientom składanie rezerwacji online, a obsłudze lokalu – zarządzanie obłożeniem sal, potwierdzeniami oraz powiadomieniami e‑mail/web‑push. Frontend w Angularze (PWA) zawiera widoki dla gości i panel administratora, backend Node.js/Express z MongoDB udostępnia API do zarządzania rezerwacjami, integruje wysyłkę maili (Resend) oraz testy API.',
+    longDescriptionEn:
+      'The system lets guests place table reservations online, while the restaurant staff manages room occupancy, confirmations and e‑mail/web‑push notifications. The Angular PWA frontend provides guest views and an admin panel, and the Node.js/Express backend with MongoDB exposes an API for managing reservations, integrates e‑mail delivery (Resend) and API tests.',
     techStack: [
       'Angular',
       'Node.js',
@@ -85,6 +91,8 @@ export const PROJECTS: Project[] = [
       'A modern one‑page site for a physiotherapy practice with clear offer presentation and a simple contact path.',
     longDescription:
       'Lekka, responsywna strona internetowa dla gabinetu fizjoterapii. Projekt skupia się na przejrzystej prezentacji usług, referencji oraz szybkiej ścieżce kontaktu (CTA do rezerwacji, mapa dojazdu). Zbudowana w Angularze z Tailwind CSS, przygotowana pod dalszą rozbudowę o moduł rezerwacji online.',
+    longDescriptionEn:
+      'A lightweight, responsive website for a physiotherapy practice. The design focuses on clear presentation of services, testimonials and a fast contact path (booking CTAs, directions map). Built in Angular with Tailwind CSS and prepared for future extension with an online booking module.',
     techStack: ['Angular', 'Tailwind CSS', 'Responsive Design', 'SEO'],
     githubUrl: '',
     liveDemoUrl: 'https://be-harmony.vercel.app',
@@ -99,6 +107,8 @@ export const PROJECTS: Project[] = [
       'An online portfolio for an interior design studio showcasing projects and the collaboration process with clients.',
     longDescription:
       'Strona typu portfolio z naciskiem na prezentację zdjęć realizacji, opisów case‑study oraz klarownej ścieżki kontaktu. Zaimplementowana w Angularze z Tailwind CSS, z dbałością o detale UI (animacje, siatka projektów), przygotowana pod integrację z CMS lub panelem klienta.',
+    longDescriptionEn:
+      'A portfolio‑style site focused on showcasing project photos, case‑study descriptions and a clear contact path. Implemented in Angular with Tailwind CSS, with attention to UI details (animations, project grid), prepared for integration with a CMS or a client panel.',
     techStack: ['Angular', 'Tailwind CSS', 'Responsive Design', 'SEO'],
     githubUrl: '',
     liveDemoUrl: 'https://www.wnetrzedokwadratu.pl',

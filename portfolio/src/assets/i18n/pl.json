@@ -18,6 +18,7 @@
     "badge": "O mnie",
     "title": "Inżynier oprogramowania z mindsetem productowym",
     "body": "Projektuję i rozwijam systemy webowe end‑to‑end: od architektury backendu, przez API i integracje, po dopracowany front‑end. Stawiam na czytelny kod, automatyzację i UX, który wspiera realne procesy biznesowe.",
+    "education": "Ukończyłem Zachodniopomorski Uniwersytet Technologiczny w Szczecinie na kierunku Informatyka, ze specjalnością Inżynieria Systemów Informatycznych.",
     "stackTitle": "Stack technologiczny",
     "experienceTitle": "Doświadczenie",
     "exp1Title": "Systemy biznesowe / aplikacje webowe",
@@ -29,6 +30,9 @@
     "badge": "Projekty",
     "title": "Wybrane systemy i aplikacje",
     "body": "Poniżej pojawią się projekty z realnymi repozytoriami i podglądami systemów — w tym momencie sekcja działa jako nowoczesny placeholder pod Twoje case studies."
+  },
+  "projects": {
+    "privateApp": "Prywatna aplikacja wewnętrzna klienta"
   },
   "contact": {
     "badge": "Kontakt",

@@ -5,6 +5,7 @@ export interface Project {
   shortDescription: string;
   shortDescriptionEn?: string;
   longDescription: string;
+  longDescriptionEn?: string;
   techStack: string[];
   githubUrl?: string;
   liveDemoUrl?: string;

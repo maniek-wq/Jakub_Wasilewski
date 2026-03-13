@@ -18,6 +18,7 @@
     "badge": "About",
     "title": "Software engineer with a product mindset",
     "body": "I design and build web systems end‑to‑end: from backend architecture and APIs, through integrations, to a polished front‑end. I focus on readable code, automation and UX that supports real business processes.",
+    "education": "I graduated from the West Pomeranian University of Technology in Szczecin with a degree in Computer Science, specialising in Information Systems Engineering.",
     "stackTitle": "Tech stack",
     "experienceTitle": "Experience",
     "exp1Title": "Business systems / web applications",
@@ -29,6 +30,9 @@
     "badge": "Projects",
     "title": "Selected systems and applications",
     "body": "Below you will find projects with real repositories and live demos — for now this section works as a modern placeholder for your case studies."
+  },
+  "projects": {
+    "privateApp": "Private internal application for the client"
   },
   "contact": {
     "badge": "Contact",

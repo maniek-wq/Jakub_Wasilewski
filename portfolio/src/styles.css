@@ -14,3 +14,111 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
+/* Unfolding modal: kontener (fixed fullscreen) → tło (table-cell) → modal (zoom) */
+.modal-container {
+  position: fixed;
+  display: table;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  transform: scale(0);
+}
+
+.modal-container.modal-open {
+  transform: scaleY(0.005) scaleX(0);
+  animation: unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1) forwards;
+}
+
+.modal-container.out {
+  transform: scale(1);
+  animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.840, 0.440, 1) forwards;
+}
+
+.modal-background {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .modal-background {
+    padding: 0 1.5rem;
+  }
+}
+
+.modal-background .modal {
+  display: inline-block;
+  text-align: left;
+  transform: scale(0);
+  transform-origin: center center;
+}
+
+.modal-container.modal-open .modal-background .modal {
+  animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.840, 0.440, 1) forwards;
+}
+
+.modal-container.out .modal-background .modal {
+  animation: zoomOut 0.5s cubic-bezier(0.165, 0.840, 0.440, 1) forwards;
+}
+
+body.modal-active {
+  overflow: hidden;
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.typewriter-cursor {
+  color: rgb(94 234 212);
+  animation: typewriter-blink 0.7s step-end infinite;
+}
+
+@keyframes typewriter-blink {
+  50% {
+    opacity: 0;
+  }
+}
