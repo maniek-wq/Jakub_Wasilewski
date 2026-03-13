@@ -18,6 +18,10 @@ export class LoadingOverlayComponent {
       const visible = state.isLoading && state.duration >= 200;
       const progress = this.getProgress(state.duration, phase);
 
+      // #region agent log
+      fetch('http://127.0.0.1:7815/ingest/ae758e0f-6de2-497f-b8ce-999bcee03851',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'01516a'},body:JSON.stringify({sessionId:'01516a',runId:'loader-debug-r2',hypothesisId:'H1-overlay-state',location:'loading-overlay.component.ts:state$',message:'Overlay received state',data:{isLoading:state.isLoading,duration:state.duration,startedAt:state.startedAt,visible,phase,progress},timestamp:Date.now()})}).catch(()=>{});
+      // #endregion agent log
+
       return {
         ...state,
         phase,
