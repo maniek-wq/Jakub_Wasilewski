@@ -32,6 +32,9 @@
     "body": "Below you will find projects with real repositories and live demos — for now this section works as a modern placeholder for your case studies."
   },
   "projects": {
+    "moreTechnologies": "{{count}} more technologies",
+    "moreTechnologiesList": "{{count}} more: {{list}}",
+    "privateThumbnail": "Private application – no preview",
     "privateApp": "Private internal application for the client",
     "previewLabel": "Preview",
     "previewDesktop": "Desktop",
@@ -42,7 +45,7 @@
   "contact": {
     "badge": "Contact",
     "title": "Let’s talk about working together",
-    "body": "In the next steps this section will be connected to a fully functional contact form with validation and e‑mail/API integration. For now you can adapt the texts to your profile.",
+    "body": "Fill in the form and your message will go directly to my inbox.",
     "nameLabel": "Name",
     "namePlaceholder": "Your name",
     "nameError": "Please provide at least 2 characters.",
@@ -53,14 +56,17 @@
     "messagePlaceholder": "Briefly describe the project or collaboration idea.",
     "messageError": "Write a few sentences to make it easier to understand the context.",
     "submit": "Send message",
-    "success": "The message was sent locally — once the backend is connected it will go straight to your inbox."
+    "success": "Thank you! Your message has been sent.",
+    "sendError": "Something went wrong while sending the message. Please try again in a moment or contact me directly via e‑mail.",
+    "rateLimit": "You can send another message in a moment (limit: 1 message per minute).",
+    "nameTooLong": "Name can be at most 100 characters.",
+    "messageTooLong": "Message can be at most 2000 characters."
   },
   "contactDetails": {
     "title": "Preferred ways to contact me",
     "phoneLabel": "Phone",
     "emailLabel": "E‑mail",
-    "instagramLabel": "Instagram",
-    "emailJsNote": "In the next step we will connect the form above to EmailJS so that messages are delivered directly to your inbox."
+    "instagramLabel": "Instagram"
   },
   "collab": {
     "badge": "How collaboration works",

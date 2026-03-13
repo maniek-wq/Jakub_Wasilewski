@@ -32,6 +32,9 @@
     "body": "Poniżej pojawią się projekty z realnymi repozytoriami i podglądami systemów — w tym momencie sekcja działa jako nowoczesny placeholder pod Twoje case studies."
   },
   "projects": {
+    "moreTechnologies": "{{count}} więcej technologii",
+    "moreTechnologiesList": "{{count}} więcej technologii: {{list}}",
+    "privateThumbnail": "Aplikacja prywatna – brak podglądu",
     "privateApp": "Prywatna aplikacja wewnętrzna klienta",
     "previewLabel": "Podgląd",
     "previewDesktop": "Desktop",
@@ -42,7 +45,7 @@
   "contact": {
     "badge": "Kontakt",
     "title": "Porozmawiajmy o współpracy",
-    "body": "W kolejnych krokach ta sekcja zostanie uzupełniona o w pełni funkcjonalny formularz kontaktowy z walidacją i integracją e‑mail/API. Na ten moment możesz dopasować teksty do swojego profilu.",
+    "body": "Wypełnij formularz, a wiadomość trafi bezpośrednio na moją skrzynkę e‑mail.",
     "nameLabel": "Imię",
     "namePlaceholder": "Twoje imię",
     "nameError": "Podaj co najmniej 2 znaki.",
@@ -53,14 +56,17 @@
     "messagePlaceholder": "Opisz krótko projekt lub temat współpracy.",
     "messageError": "Napisz kilka zdań, aby łatwiej zrozumieć kontekst.",
     "submit": "Wyślij wiadomość",
-    "success": "Wiadomość została wysłana lokalnie — po podpięciu backendu trafi na Twoją skrzynkę."
+    "success": "Dziękuję! Twoja wiadomość została wysłana.",
+    "sendError": "Coś poszło nie tak przy wysyłaniu wiadomości. Spróbuj ponownie za chwilę lub napisz bezpośrednio na e‑mail.",
+    "rateLimit": "Możesz wysłać kolejną wiadomość za chwilę (limit: 1 wiadomość na minutę).",
+    "nameTooLong": "Imię może mieć maksymalnie 100 znaków.",
+    "messageTooLong": "Wiadomość może mieć maksymalnie 2000 znaków."
   },
   "contactDetails": {
     "title": "Preferowane formy kontaktu",
     "phoneLabel": "Telefon",
     "emailLabel": "E‑mail",
-    "instagramLabel": "Instagram",
-    "emailJsNote": "Formularz powyżej w kolejnym kroku podepniemy pod wysyłkę przez EmailJS, tak aby wiadomości trafiały bezpośrednio na Twoją skrzynkę."
+    "instagramLabel": "Instagram"
   },
   "collab": {
     "badge": "Jak wygląda współpraca",

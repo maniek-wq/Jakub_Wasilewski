@@ -37,6 +37,11 @@ export class LayoutComponent {
     private sanitizer: DomSanitizer,
   ) {}
 
+  getProjectTitle(project: Project): string {
+    const lang = this.translate.currentLang || this.translate.getDefaultLang();
+    return lang === 'en' && project.titleEn ? project.titleEn : project.title;
+  }
+
   getProjectDescription(project: Project): string {
     const lang = this.translate.currentLang || this.translate.getDefaultLang();
     return lang === 'en' && project.longDescriptionEn ? project.longDescriptionEn : project.longDescription;

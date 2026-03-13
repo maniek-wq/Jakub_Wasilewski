@@ -28,6 +28,7 @@ export const PROJECTS: Project[] = [
     githubUrl: '',
     liveDemoUrl: 'https://etrainee.pl',
     previewImage: 'assets/images/etrainee.png',
+    thumbnail: 'assets/images/Thumbnails/etrainee.png',
   },
   {
     id: 'dls-system',
@@ -55,6 +56,7 @@ export const PROJECTS: Project[] = [
     ],
     githubUrl: '',
     liveDemoUrl: '',
+    thumbnailPlaceholder: true,
   },
   {
     id: 'res-uk',
@@ -84,6 +86,7 @@ export const PROJECTS: Project[] = [
     previewVideoDesktop: 'assets/videos/Res-UK/Res_UK_Desk_CL.mp4',
     previewVideoMobile: 'assets/videos/Res-UK/Res_Mob.mp4',
     previewVideoAdmin: 'assets/videos/Res-UK/Admin_res_uk.mp4',
+    thumbnail: 'assets/images/Thumbnails/Thumbnail_Res_UK.png',
   },
   {
     id: 'be-harmony',
@@ -102,6 +105,7 @@ export const PROJECTS: Project[] = [
     liveDemoUrl: 'https://be-harmony.vercel.app',
     previewVideoDesktop: 'assets/videos/be-harmony/Beh_2_Des.mp4',
     previewVideoMobile: 'assets/videos/be-harmony/Beh_Mob.mp4',
+    thumbnail: 'assets/images/Thumbnails/Thumbnail_Be_harmony.png',
   },
   {
     id: 'wnetrze-kwadratu',
@@ -120,6 +124,7 @@ export const PROJECTS: Project[] = [
     liveDemoUrl: 'https://www.wnetrzedokwadratu.pl',
     previewVideoDesktop: 'assets/videos/wnetrze-kwadratu/WDK_Desk.mp4',
     previewVideoMobile: 'assets/videos/wnetrze-kwadratu/WDK_Mob.mp4',
+    thumbnail: 'assets/images/Thumbnails/Thumbnail_WDK.png',
   },
 ];
 

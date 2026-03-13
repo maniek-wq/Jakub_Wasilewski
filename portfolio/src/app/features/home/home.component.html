@@ -299,7 +299,7 @@
               *ngIf="submitted && contactForm.controls.name.invalid"
               class="text-xs text-rose-400"
             >
-              {{ 'contact.nameError' | translate }}
+              {{ (contactForm.controls.name.errors?.['maxlength'] ? 'contact.nameTooLong' : 'contact.nameError') | translate }}
             </p>
           </div>
           <div class="space-y-1.5">
@@ -337,16 +337,49 @@
             *ngIf="submitted && contactForm.controls.message.invalid"
             class="text-xs text-rose-400"
           >
-            {{ 'contact.messageError' | translate }}
+            {{ (contactForm.controls.message.errors?.['maxlength'] ? 'contact.messageTooLong' : 'contact.messageError') | translate }}
+          </p>
+          <p class="text-right text-[11px] text-slate-500">
+            {{ contactForm.controls.message.value?.length ?? 0 }} / 2000
           </p>
         </div>
 
-        <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+        <div class="flex flex-col gap-2 pt-2">
+          <div
+            *ngIf="isSending"
+            class="h-0.5 w-full overflow-hidden rounded-full bg-slate-800/80"
+          >
+            <div
+              class="h-full w-1/3 animate-[ping_0.9s_ease-in-out_infinite] bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500"
+            ></div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3">
           <button
             type="submit"
-            class="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-medium text-slate-950 shadow-[0_0_20px_rgba(16,185,129,0.6)] transition hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            [disabled]="isSending || isRateLimited"
+            class="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-medium text-slate-950 shadow-[0_0_20px_rgba(16,185,129,0.6)] transition hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {{ 'contact.submit' | translate }}
+            <svg
+              *ngIf="isSending"
+              class="h-4 w-4 animate-spin text-slate-950"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364-6.364-2.121 2.121M8.757 15.243l-2.12 2.121m0-12.728 2.12 2.121m8.486 8.486-2.12 2.121"
+              />
+            </svg>
+            <span *ngIf="!isSending">
+              {{ 'contact.submit' | translate }}
+            </span>
+            <span *ngIf="isSending">
+              Wysyłanie...
+            </span>
           </button>
 
           <p
@@ -356,6 +389,23 @@
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(74,222,128,0.75)]"></span>
             {{ 'contact.success' | translate }}
           </p>
+          <p
+            *ngIf="submitError && !submitSuccess"
+            class="flex items-center gap-2 text-xs text-rose-300 transition"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-rose-400 shadow-[0_0_10px_rgba(248,113,113,0.75)]"></span>
+            {{ submitError | translate }}
+            <span *ngIf="submitError === 'contact.rateLimit' && cooldownSeconds > 0" class="text-slate-400">
+              ({{ cooldownSeconds }} s)
+            </span>
+          </p>
+          <p
+            *ngIf="isRateLimited && !submitError && !isSending"
+            class="text-xs text-amber-300/90"
+          >
+            {{ 'contact.rateLimit' | translate }} ({{ cooldownSeconds }} s)
+          </p>
+          </div>
         </div>
       </form>
 
@@ -398,9 +448,6 @@
           </a>
         </div>
 
-        <p class="text-xs text-slate-500">
-          {{ 'contactDetails.emailJsNote' | translate }}
-        </p>
       </div>
     </div>
   </section>
