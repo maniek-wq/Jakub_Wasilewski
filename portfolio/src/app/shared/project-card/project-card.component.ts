@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import type { Project } from '../../features/projects/project.model';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ProjectCardComponent {
   @Input({ required: true }) project!: Project;
+  @Output() open = new EventEmitter<Project>();
 
   constructor(private translate: TranslateService) {}
 

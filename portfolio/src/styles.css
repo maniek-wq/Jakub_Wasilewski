@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-950 text-slate-100 font-body antialiased;
+  @apply bg-slate-950 text-slate-100 font-body antialiased overflow-x-hidden;
 }
 
 app-root {
@@ -12,4 +12,5 @@ app-root {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
