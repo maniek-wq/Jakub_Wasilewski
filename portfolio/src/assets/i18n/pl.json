@@ -35,7 +35,9 @@
     "privateApp": "Prywatna aplikacja wewnętrzna klienta",
     "previewLabel": "Podgląd",
     "previewDesktop": "Desktop",
-    "previewMobile": "Mobile"
+    "previewMobile": "Mobile",
+    "previewAdmin": "Admin",
+    "previewHomepage": "Strona główna"
   },
   "contact": {
     "badge": "Kontakt",

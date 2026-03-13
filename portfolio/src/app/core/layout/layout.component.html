@@ -48,12 +48,49 @@
             [appTypewriterSpeed]="35"
           ></p>
 
-          <ng-container *ngIf="active.previewVideoDesktop || active.previewVideoMobile">
+          <ng-container *ngIf="active.previewVideoDesktop || active.previewVideoMobile || active.previewVideoAdmin || active.previewImage">
             <div class="mb-4">
               <h4 class="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-400/80">
                 {{ 'projects.previewLabel' | translate }}
               </h4>
-              <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div
+                class="grid grid-cols-1 gap-3"
+                [ngClass]="(!active.previewVideoDesktop && !active.previewVideoMobile && !active.previewVideoAdmin) ? 'sm:grid-cols-1' : (active.previewVideoAdmin ? 'sm:grid-cols-3' : 'sm:grid-cols-2')"
+              >
+                <div
+                  *ngIf="active.previewImage"
+                  class="flex flex-col rounded-xl border border-slate-700/80 bg-slate-900/60 overflow-hidden"
+                >
+                  <div class="flex shrink-0 items-center justify-center gap-1.5 border-b border-slate-700/60 bg-slate-800/50 px-2 py-1.5 text-[11px] text-slate-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                    </svg>
+                    {{ 'projects.previewHomepage' | translate }}
+                  </div>
+                  <div class="relative w-full shrink-0 bg-slate-950 flex items-center justify-center overflow-hidden">
+                    <a
+                      *ngIf="active.liveDemoUrl"
+                      [href]="active.liveDemoUrl"
+                      target="_blank"
+                      rel="noreferrer"
+                      class="block w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                    >
+                      <img
+                        [src]="active.previewImage"
+                        [alt]="active.title"
+                        class="w-full h-auto max-h-[320px] object-contain object-top transition opacity-90 hover:opacity-100"
+                        loading="lazy"
+                      />
+                    </a>
+                    <img
+                      *ngIf="!active.liveDemoUrl"
+                      [src]="active.previewImage"
+                      [alt]="active.title"
+                      class="w-full h-auto max-h-[320px] object-contain object-top"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
                 <div
                   *ngIf="active.previewVideoDesktop"
                   class="flex flex-col rounded-xl border border-slate-700/80 bg-slate-900/60 overflow-hidden"
@@ -97,6 +134,30 @@
                       preload="metadata"
                     >
                       <source [src]="getVideoSrc(active.previewVideoMobile)" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+                <div
+                  *ngIf="active.previewVideoAdmin"
+                  class="flex flex-col rounded-xl border border-slate-700/80 bg-slate-900/60 overflow-hidden"
+                >
+                  <div class="flex shrink-0 items-center justify-center gap-1.5 border-b border-slate-700/60 bg-slate-800/50 px-2 py-1.5 text-[11px] text-slate-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 010 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 010-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    {{ 'projects.previewAdmin' | translate }}
+                  </div>
+                  <div class="relative h-[200px] w-full shrink-0 bg-slate-950 flex items-center justify-center">
+                    <video
+                      class="h-full w-full object-contain"
+                      controls
+                      loop
+                      muted
+                      playsinline
+                      preload="metadata"
+                    >
+                      <source [src]="getVideoSrc(active.previewVideoAdmin)" type="video/mp4" />
                     </video>
                   </div>
                 </div>

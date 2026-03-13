@@ -27,6 +27,7 @@ export const PROJECTS: Project[] = [
     ],
     githubUrl: '',
     liveDemoUrl: 'https://etrainee.pl',
+    previewImage: 'assets/images/etrainee.png',
   },
   {
     id: 'dls-system',
@@ -80,6 +81,9 @@ export const PROJECTS: Project[] = [
     ],
     githubUrl: '',
     liveDemoUrl: 'https://res-uk.vercel.app',
+    previewVideoDesktop: 'assets/videos/Res-UK/Res_UK_Desk_CL.mp4',
+    previewVideoMobile: 'assets/videos/Res-UK/Res_Mob.mp4',
+    previewVideoAdmin: 'assets/videos/Res-UK/Admin_res_uk.mp4',
   },
   {
     id: 'be-harmony',
@@ -114,6 +118,8 @@ export const PROJECTS: Project[] = [
     techStack: ['Angular', 'Tailwind CSS', 'Responsive Design', 'SEO'],
     githubUrl: '',
     liveDemoUrl: 'https://www.wnetrzedokwadratu.pl',
+    previewVideoDesktop: 'assets/videos/wnetrze-kwadratu/WDK_Desk.mp4',
+    previewVideoMobile: 'assets/videos/wnetrze-kwadratu/WDK_Mob.mp4',
   },
 ];
 

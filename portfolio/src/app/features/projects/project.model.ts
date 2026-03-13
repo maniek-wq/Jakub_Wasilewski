@@ -14,5 +14,9 @@ export interface Project {
   previewVideoDesktop?: string;
   /** Ścieżka do wideo podglądu – widok mobilny */
   previewVideoMobile?: string;
+  /** Ścieżka do wideo podglądu – panel admina */
+  previewVideoAdmin?: string;
+  /** Ścieżka do zrzutu ekranu strony głównej (jak podgląd na Vercel) */
+  previewImage?: string;
 }
 

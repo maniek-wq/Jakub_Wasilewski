@@ -70,25 +70,6 @@ export class LoadingService {
     const startedAt = this.startedAt;
     const duration = startedAt != null ? now - startedAt : 0;
 
-    // #region agent log
-    fetch('http://127.0.0.1:7815/ingest/ae758e0f-6de2-497f-b8ce-999bcee03851', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Debug-Session-Id': '01516a',
-      },
-      body: JSON.stringify({
-        sessionId: '01516a',
-        runId: 'loader-debug-r2',
-        hypothesisId: 'H1-duration-emission',
-        location: 'loading.service.ts:emitState',
-        message: 'Loading state emit',
-        data: { isLoading, startedAt, duration, pendingTotal: this.getTotalPending() },
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {});
-    // #endregion agent log
-
     this.stateSubject.next({
       isLoading,
       startedAt,
