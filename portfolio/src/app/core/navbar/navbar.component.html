@@ -1,0 +1,125 @@
+<header
+  class="fixed inset-x-0 top-0 z-50 border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-xl"
+>
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:px-6">
+    <a href="#" class="flex items-center gap-2">
+      <span
+        class="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500/10 ring-1 ring-emerald-500/40"
+      >
+        <span class="text-lg font-semibold text-emerald-400">JW</span>
+      </span>
+      <span class="hidden flex-col text-sm leading-tight sm:flex">
+        <span class="font-display text-sm font-semibold text-slate-50"
+          >Jakub Wasilewski</span
+        >
+        <span class="text-xs text-slate-400">Software Engineer</span>
+      </span>
+    </a>
+
+    <div class="flex items-center gap-4">
+      <div class="hidden items-center gap-6 text-sm font-medium text-slate-300 md:flex">
+        <button
+          class="transition-colors hover:text-emerald-400"
+          [class.text-emerald-400]="currentSection === 'about'"
+          (click)="navigateTo('about')"
+        >
+          {{ 'nav.about' | translate }}
+        </button>
+        <button
+          class="transition-colors hover:text-emerald-400"
+          [class.text-emerald-400]="currentSection === 'projects'"
+          (click)="navigateTo('projects')"
+        >
+          {{ 'nav.projects' | translate }}
+        </button>
+        <button
+          class="transition-colors hover:text-emerald-400"
+          [class.text-emerald-400]="currentSection === 'contact'"
+          (click)="navigateTo('contact')"
+        >
+          {{ 'nav.contact' | translate }}
+        </button>
+      </div>
+
+      <div
+        class="hidden items-center gap-1 rounded-full border border-slate-800/80 bg-slate-900/70 px-1 py-0.5 text-[11px] text-slate-300 md:flex"
+      >
+        <button
+          class="rounded-full px-2 py-0.5 transition"
+          [class.bg-slate-800]="currentLang === 'pl'"
+          (click)="switchLanguage('pl')"
+        >
+          PL
+        </button>
+        <button
+          class="rounded-full px-2 py-0.5 transition"
+          [class.bg-slate-800]="currentLang === 'en'"
+          (click)="switchLanguage('en')"
+        >
+          EN
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800/80 bg-slate-900/80 text-slate-200 shadow-sm shadow-slate-950/60 ring-emerald-500/40 transition hover:border-emerald-500/70 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 md:hidden"
+        (click)="toggleMenu()"
+        aria-label="Toggle navigation"
+      >
+        <span *ngIf="!isMenuOpen; else closeIcon">
+          <span class="sr-only">Open menu</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </span>
+        <ng-template #closeIcon>
+          <span class="sr-only">Close menu</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6" />
+          </svg>
+        </ng-template>
+      </button>
+    </div>
+  </nav>
+
+  <div
+    *ngIf="isMenuOpen"
+    class="border-t border-slate-800/70 bg-slate-950/95 px-4 pb-4 pt-2 shadow-lg shadow-black/40 md:hidden"
+  >
+    <div class="flex flex-col gap-2 text-sm font-medium text-slate-200">
+      <button
+        class="rounded-lg px-3 py-2 text-left transition hover:bg-slate-800/80"
+        (click)="navigateTo('about')"
+      >
+        {{ 'nav.about' | translate }}
+      </button>
+      <button
+        class="rounded-lg px-3 py-2 text-left transition hover:bg-slate-800/80"
+        (click)="navigateTo('projects')"
+      >
+        {{ 'nav.projects' | translate }}
+      </button>
+      <button
+        class="rounded-lg px-3 py-2 text-left transition hover:bg-slate-800/80"
+        (click)="navigateTo('contact')"
+      >
+        {{ 'nav.contact' | translate }}
+      </button>
+    </div>
+  </div>
+</header>
+

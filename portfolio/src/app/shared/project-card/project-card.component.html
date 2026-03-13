@@ -1,0 +1,90 @@
+<article
+  class="group flex h-full flex-col rounded-2xl border border-slate-800/80 bg-slate-900/40 p-5 shadow-sm shadow-slate-950/60 transition hover:-translate-y-1 hover:border-emerald-500/70 hover:shadow-[0_18px_45px_rgba(16,185,129,0.35)]"
+>
+  <div class="mb-3 flex items-center justify-between gap-2">
+    <h3 class="text-sm font-semibold text-slate-50">
+      {{ project.title }}
+    </h3>
+    <span class="rounded-full bg-slate-800/80 px-2.5 py-0.5 text-[11px] text-slate-300">
+      {{ project.techStack[0] }}
+    </span>
+  </div>
+
+  <p class="mb-3 text-xs text-slate-300">
+    {{ project.shortDescription }}
+  </p>
+
+  <div class="mt-auto flex flex-wrap items-center justify-between gap-2 text-[11px]">
+    <div class="flex flex-wrap gap-1.5">
+      <span
+        *ngFor="let tech of project.techStack | slice : 0 : 4"
+        class="rounded-full bg-slate-800/80 px-2.5 py-0.5 text-slate-200"
+      >
+        {{ tech }}
+      </span>
+      <span *ngIf="project.techStack.length > 4" class="text-slate-400">
+        +{{ project.techStack.length - 4 }}
+      </span>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a
+        *ngIf="project.liveDemoUrl"
+        [href]="project.liveDemoUrl"
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300 transition hover:bg-emerald-500/20 hover:text-emerald-100"
+      >
+        <span>Live demo</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-3.5 w-3.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6-6M13 18l6-6" />
+        </svg>
+      </a>
+
+      <a
+        *ngIf="project.githubUrl"
+        [href]="project.githubUrl"
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex items-center gap-1 text-slate-300 transition hover:text-emerald-300"
+      >
+        <span>GitHub</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-3.5 w-3.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </a>
+
+      <button
+        *ngIf="!project.githubUrl && !project.liveDemoUrl"
+        class="inline-flex items-center gap-1 text-emerald-300 transition group-hover:text-emerald-200"
+      >
+        Podgląd wkrótce
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-3.5 w-3.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</article>
+

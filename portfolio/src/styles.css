@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-950 text-slate-100 font-body antialiased;
+}
+
+app-root {
+  @apply min-h-screen flex flex-col;
+}
+
+html {
+  scroll-behavior: smooth;
+}

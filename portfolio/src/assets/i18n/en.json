@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Portfolio · Software Engineer",
+    "titleMain": "I build modern solutions",
+    "titleAccent": "for IT",
+    "subtitle": "I am a software engineer combining attention to UI detail with solid backend architecture.",
+    "primaryCta": "View projects",
+    "secondaryCta": "Get in touch",
+    "availability": "Open for new opportunities"
+  }
+}
+

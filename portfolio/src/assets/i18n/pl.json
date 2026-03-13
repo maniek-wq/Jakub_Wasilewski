@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "about": "O mnie",
+    "projects": "Projekty",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "Portfolio · Software Engineer",
+    "titleMain": "Tworzę nowoczesne rozwiązania",
+    "titleAccent": "dla IT",
+    "subtitle": "Jestem inżynierem oprogramowania, który łączy dbałość o detale UI z solidną architekturą backendu.",
+    "primaryCta": "Zobacz projekty",
+    "secondaryCta": "Skontaktuj się",
+    "availability": "Dostępny na nowe projekty"
+  }
+}
+

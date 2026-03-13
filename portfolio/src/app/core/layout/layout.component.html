@@ -1,0 +1,13 @@
+<div class="flex min-h-screen flex-col bg-slate-950 text-slate-100">
+  <app-navbar
+    [currentSection]="currentSection"
+    (sectionChange)="onSectionChange($event)"
+  ></app-navbar>
+
+  <main class="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 pt-24 pb-16 lg:px-6 lg:pt-28">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-footer></app-footer>
+</div>
+
