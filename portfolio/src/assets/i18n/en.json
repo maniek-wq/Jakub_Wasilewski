@@ -29,7 +29,7 @@
   "projectsSection": {
     "badge": "Projects",
     "title": "Selected systems and applications",
-    "body": "Below you will find projects with real repositories and live demos — for now this section works as a modern placeholder for your case studies."
+    "body": "E‑learning platforms, reservation systems, one‑page sites and portfolios — projects built with Angular and Node.js, from concept through to production."
   },
   "projects": {
     "moreTechnologies": "{{count}} more technologies",

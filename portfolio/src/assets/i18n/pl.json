@@ -29,7 +29,7 @@
   "projectsSection": {
     "badge": "Projekty",
     "title": "Wybrane systemy i aplikacje",
-    "body": "Poniżej pojawią się projekty z realnymi repozytoriami i podglądami systemów — w tym momencie sekcja działa jako nowoczesny placeholder pod Twoje case studies."
+    "body": "Platformy e‑learningowe, systemy rezerwacji, strony wizytówki i portfolio — projekty zbudowane w Angularze i Node.js, od projektu przez wdrożenie do produkcji."
   },
   "projects": {
     "moreTechnologies": "{{count}} więcej technologii",
